@@ -5,6 +5,8 @@ const geocode = require("./utils/geocode");
 const forecast = require("./utils/forecast");
 
 const app = express();
+// process.env lets us access enviroment variables
+const port = process.env.PORT || 3000;
 
 // evaulates to absoulte path to the views directory in 'templates'
 const viewsPath = path.join(__dirname, "../templates/views");
@@ -81,4 +83,4 @@ app.get("*", (req, res) => {
   });
 });
 
-app.listen(3000, () => console.log("Server listening on port 3000"));
+app.listen(port, () => console.log(`Server listening on port ${3000}`));
